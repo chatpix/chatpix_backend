@@ -8,7 +8,9 @@ import dotenv from "dotenv";
 import morgan from "morgan";
 import cors from "cors";
 import helmet from "helmet";
+import routes from "./routes";
 
+app.use(express.json());
 dotenv.config();
 app.use(cors());
 app.use(morgan("common"));
@@ -29,9 +31,7 @@ mongoose
   })
   .catch((err) => console.log(err));
 
-app.get("/", async (req: express.Request, res: express.Response) => {
-  res.send("Welcome to ts with node app");
-});
+app.use("/api/v1/", routes());
 
 // Start express server
 const PORT = process.env.PORT || 8900;
