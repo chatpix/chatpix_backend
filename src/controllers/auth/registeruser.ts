@@ -10,7 +10,7 @@ export const registerUser = async (
     const availableUser = await User.findOne({ phone_number });
     if (availableUser) {
       return res.status(200).json({
-        message: "User already available, navigate to home and fetch mesages",
+        message: "User already available, navigate to home and fetch messages",
         availableUser,
       });
     }

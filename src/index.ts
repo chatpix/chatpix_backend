@@ -34,7 +34,7 @@ mongoose
 app.use("/api/v1/", routes());
 
 // Start express server
-const PORT = process.env.PORT || 8900;
+const PORT = process.env.PORT || 8200;
 app.listen(PORT, () => {
   console.log(`Backend server is running at port ${PORT}`);
 });
